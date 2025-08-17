@@ -34,6 +34,15 @@ The `build/` folder contains:
 2. Run: `vercel --prod`
 3. Follow the prompts
 
+**If you encounter "Command npm run build exited with 126" error:**
+- The `vercel.json` configuration file has been created to fix this issue
+- Alternatively, use the Vercel dashboard:
+  1. Go to [vercel.com](https://vercel.com) and sign in
+  2. Click "New Project" and import from Git
+  3. Select your repository
+  4. Vercel will auto-detect it's a Create React App
+  5. Deploy directly from the dashboard
+
 #### GitHub Pages
 1. Install gh-pages: `npm install --save-dev gh-pages`
 2. Add to package.json:
@@ -117,6 +126,7 @@ Your app includes Progressive Web App features:
 - [x] ✅ TypeScript compilation successful
 - [x] ✅ Production build created
 - [x] ✅ No critical errors in build
+- [x] ✅ Vercel configuration added
 - [ ] 🔄 Test the production build locally
 - [ ] 🔄 Configure environment variables
 - [ ] 🔄 Set up analytics (optional)
@@ -148,6 +158,28 @@ serve -s build
 - Implement proper CORS policies
 - Regular security updates for dependencies
 
+## 🔧 Troubleshooting
+
+### Common Deployment Issues
+
+**Vercel "npm run build exited with 126" Error:**
+- ✅ Fixed with included `vercel.json` configuration
+- Alternative: Deploy via Vercel dashboard instead of CLI
+- Ensure Node.js version compatibility (18.x recommended)
+
+**Build Failures:**
+- Run `npm run build` locally first to identify issues
+- Check for TypeScript errors
+- Verify all dependencies are installed
+
+**Routing Issues (404 on refresh):**
+- Ensure SPA routing is configured on your hosting platform
+- Check that `vercel.json` routes are properly set
+
+**Environment Variables:**
+- Create `.env.production` with your actual values
+- Add environment variables in your hosting platform's dashboard
+
 ## 📞 Support
 
 If you encounter any issues during deployment:
@@ -155,6 +187,7 @@ If you encounter any issues during deployment:
 2. Verify all environment variables are set
 3. Ensure your hosting platform supports SPA routing
 4. Test the build locally first
+5. Check the troubleshooting section above
 
 ---
 
